@@ -81,5 +81,31 @@ Ambos datasets proceden de Kaggle:
 ## Estado actual
 Proyecto en desarrollo. Entrega prevista: última semana de junio de 2026.
 
+## Progreso del proyecto
+
+### ✅ Fase 1 - Definición y planteamiento (completada)
+- Definición de objetivos, KPIs y sectores
+- Documento del Bloque 1 entregado
+- Estructura del repositorio creada
+
+### ✅ Fase 2 - Limpieza de datos (completada)
+Proceso de filtrado y limpieza realizado en Python:
+
+| Paso | Empresas |
+|------|----------|
+| Dataset original | 3.808 |
+| Tras filtrar por 4 sectores objetivo | 1.621 |
+| Tras eliminar nulos en KPIs | 1.535 |
+| Tras eliminar outliers | 1.124 |
+
+Universo final de análisis: **1.124 empresas** distribuidas entre Technology, Healthcare, Basic Materials y Energy.
+
+### ⏳ Fase 3 - Modelado SQL (en curso)
+### ⏳ Fase 4 - Análisis exploratorio (EDA)
+### ⏳ Fase 5 - Machine Learning (PCA + K-Means + Regresión)
+### ⏳ Fase 6 - Construcción de cartera en Excel
+### ⏳ Fase 7 - Dashboard Power BI
+### ⏳ Fase 8 - Informe final y defensa
+
 ## Autor
 Jesús Cuenca - Bootcamp Data Analytics
