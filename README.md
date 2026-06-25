@@ -100,7 +100,7 @@ Proceso de filtrado y limpieza realizado en Python:
 
 Universo final de análisis: **1.124 empresas** distribuidas entre Technology, Healthcare, Basic Materials y Energy.
 
-### ⏳ Fase 3 - Modelado SQL (en curso)
+### ✅ Fase 3 - Modelado SQL (completada)
 ### ⏳ Fase 4 - Análisis exploratorio (EDA)
 ### ⏳ Fase 5 - Machine Learning (PCA + K-Means + Regresión)
 ### ⏳ Fase 6 - Construcción de cartera en Excel
