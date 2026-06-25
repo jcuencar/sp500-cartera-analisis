@@ -100,7 +100,22 @@ Proceso de filtrado y limpieza realizado en Python:
 
 Universo final de análisis: **1.124 empresas** distribuidas entre Technology, Healthcare, Basic Materials y Energy.
 
-### ⏳ Fase 3 - Modelado SQL (en curso)
+### ✅ Fase 3 - Modelado SQL (completada)
+Base de datos cartera_sp500 creada en PostgreSQL (DBeaver).
+Tabla empresas_sp500 cargada con 1.124 empresas.
+Filtrado por KPIs sector a sector:
+
+Sector            | Universo | Candidatas
+------------------|----------|----------
+Technology        |   460    |    76
+Healthcare        |   292    |    53
+Energy            |   178    |    72
+Basic Materials   |   194    |    41
+Total             |  1.124   |   242
+
+Tabla empresas_candidatas creada con 242 empresas que superan
+los umbrales de calidad financiera definidos.
+Script: sql/02_filtrado_kpis.sql
 ### ⏳ Fase 4 - Análisis exploratorio (EDA)
 ### ⏳ Fase 5 - Machine Learning (PCA + K-Means + Regresión)
 ### ⏳ Fase 6 - Construcción de cartera en Excel
