@@ -1,7 +1,7 @@
 # Análisis y Construcción de Cartera de Inversión S&P 500
 
 ## Descripción del proyecto
-Proyecto final del bootcamp de análisis de datos. El objetivo es analizar el comportamiento histórico del mercado de renta variable americana para construir y justificar una cartera de inversión de 50.000 euros dirigida a un perfil inversor moderado.
+Proyecto final del bootcamp de análisis de datos. El objetivo es analizar el comportamiento histórico del mercado de renta variable americana para construir y justificar una cartera de inversión de 50.000 dólares dirigida a un perfil inversor moderado.
 
 Se trata de un proyecto integrador que aplica las herramientas y técnicas estudiadas durante el bootcamp a un caso realista: la selección de activos cotizados del S&P 500 mediante el análisis sistemático de KPIs financieros y la aplicación de técnicas estadísticas y de machine learning.
 
@@ -79,7 +79,7 @@ Ambos datasets proceden de Kaggle:
 8. Informe final y defensa del proyecto
 
 ## Estado actual
-Proyecto prácticamente terminado. Pendiente: informe final y presentación. Entrega prevista: 29 de junio de 2026.
+Proyecto en desarrollo. Entrega prevista: última semana de junio de 2026.
 
 ## Progreso del proyecto
 
@@ -101,20 +101,27 @@ Proceso de filtrado y limpieza realizado en Python:
 Universo final de análisis: **1.124 empresas** distribuidas entre Technology, Healthcare, Basic Materials y Energy.
 
 ### ✅ Fase 3 - Modelado SQL (completada)
-### ✅ Fase 4 - Análisis exploratorio (EDA)
-### ✅ Fase 5 - Machine Learning (PCA + K-Means + Regresión)
-### ✅ Fase 6 - Construcción de cartera en Excel
-- 242 empresas candidatas filtradas por KPIs en SQL
-- Clusters K-Means asignados a cada empresa
-- Cartera final de 20 empresas seleccionadas (5 por sector)
-- Score ponderado: ROE (30%) + Margen (30%) + Deuda (25%) + Crecimiento (15%)
-- Distribución de 50.000€ proporcional al score de cada empresa
-- KPIs agregados: ROE ponderado 27.49% | Margen 37.34% | Deuda 25.64%
+Base de datos cartera_sp500 creada en PostgreSQL (DBeaver).
+Tabla empresas_sp500 cargada con 1.124 empresas.
+Filtrado por KPIs sector a sector:
 
-### ✅ Fase 7 - Dashboard Power BI
-- Dashboard 1 (Visión General): tabla de 20 empresas + gráfico circular de distribución por sector
-- Dashboard 2 (Perfil Financiero): ROE por empresa + gráfico de dispersión Margen vs Deuda
+Sector            | Universo | Candidatas
+------------------|----------|----------
+Technology        |   460    |    76
+Healthcare        |   292    |    53
+Energy            |   178    |    72
+Basic Materials   |   194    |    41
+Total             |  1.124   |   242
 
+Tabla empresas_candidatas creada con 242 empresas que superan
+los umbrales de calidad financiera definidos.
+
+Script: sql/02_filtrado_kpis.sql
+
+### ⏳ Fase 4 - Análisis exploratorio (EDA)
+### ⏳ Fase 5 - Machine Learning (PCA + K-Means + Regresión)
+### ⏳ Fase 6 - Construcción de cartera en Excel
+### ⏳ Fase 7 - Dashboard Power BI
 ### ⏳ Fase 8 - Informe final y defensa
 
 ## Autor
