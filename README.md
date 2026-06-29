@@ -1,7 +1,7 @@
 # Análisis y Construcción de Cartera de Inversión S&P 500
 
 ## Descripción del proyecto
-Proyecto final del bootcamp de análisis de datos. El objetivo es analizar el comportamiento histórico del mercado de renta variable americana para construir y justificar una cartera de inversión de 50.000 dólares dirigida a un perfil inversor moderado.
+Proyecto final del bootcamp de análisis de datos. El objetivo es analizar el comportamiento histórico del mercado de renta variable americana para construir y justificar una cartera de inversión de 50.000 euros dirigida a un perfil inversor moderado.
 
 Se trata de un proyecto integrador que aplica las herramientas y técnicas estudiadas durante el bootcamp a un caso realista: la selección de activos cotizados del S&P 500 mediante el análisis sistemático de KPIs financieros y la aplicación de técnicas estadísticas y de machine learning.
 
@@ -10,7 +10,7 @@ Se trata de un proyecto integrador que aplica las herramientas y técnicas estud
 - ¿Qué empresas dentro de esos sectores cumplen con los KPIs financieros mínimos exigidos?
 - ¿Existen perfiles naturales de empresas que el algoritmo de clustering pueda identificar?
 - ¿Los KPIs seleccionados tienen relación real con la rentabilidad histórica observada?
-- ¿Cómo debe distribuirse el capital de 50.000 dólares entre los activos seleccionados?
+- ¿Cómo debe distribuirse el capital de 50.000 euros entre los activos seleccionados?
 
 ## Datasets utilizados
 Ambos datasets proceden de Kaggle:
@@ -66,7 +66,7 @@ Ambos datasets proceden de Kaggle:
 - `sql/` → scripts y consultas SQL
 - `visualizaciones/` → gráficos exportados
 - `dashboard/` → archivos Power BI
-- `presentacion/` → documentación e informe final
+- `presentacion/` → informe final PDF y presentación PowerPoint
 
 ## Fases del proyecto
 1. Definición de objetivos, KPIs y storytelling
@@ -79,7 +79,7 @@ Ambos datasets proceden de Kaggle:
 8. Informe final y defensa del proyecto
 
 ## Estado actual
-Proyecto en desarrollo. Entrega prevista: última semana de junio de 2026.
+Proyecto completado. Entrega: 29 de junio de 2026.
 
 ## Progreso del proyecto
 
@@ -101,28 +101,43 @@ Proceso de filtrado y limpieza realizado en Python:
 Universo final de análisis: **1.124 empresas** distribuidas entre Technology, Healthcare, Basic Materials y Energy.
 
 ### ✅ Fase 3 - Modelado SQL (completada)
-Base de datos cartera_sp500 creada en PostgreSQL (DBeaver).
-Tabla empresas_sp500 cargada con 1.124 empresas.
-Filtrado por KPIs sector a sector:
+Base de datos cartera_sp500 creada en SQLite (DBeaver). Tabla empresas_sp500 cargada con 1.124 empresas. Filtrado por KPIs sector a sector:
 
-Sector            | Universo | Candidatas
-------------------|----------|----------
-Technology        |   460    |    76
-Healthcare        |   292    |    53
-Energy            |   178    |    72
-Basic Materials   |   194    |    41
-Total             |  1.124   |   242
+| Sector | Universo | Candidatas |
+|--------|----------|------------|
+| Technology | 460 | 76 |
+| Healthcare | 292 | 53 |
+| Energy | 178 | 72 |
+| Basic Materials | 194 | 41 |
+| Total | 1.124 | 242 |
 
-Tabla empresas_candidatas creada con 242 empresas que superan
-los umbrales de calidad financiera definidos.
+Tabla empresas_candidatas creada con 242 empresas que superan los umbrales de calidad financiera definidos. Script: `sql/02_filtrado_kpis.sql`
 
-Script: sql/02_filtrado_kpis.sql
+### ✅ Fase 4 - Análisis exploratorio EDA (completada)
+- Distribuciones de los 5 KPIs sobre las 242 empresas candidatas
+- Matriz de correlaciones: correlación máxima Margen↔Crecimiento (0,33)
+- Distribución por sector: Technology (76) y Energy (72) dominan el universo candidato
 
-### ⏳ Fase 4 - Análisis exploratorio (EDA)
-### ⏳ Fase 5 - Machine Learning (PCA + K-Means + Regresión)
-### ⏳ Fase 6 - Construcción de cartera en Excel
-### ⏳ Fase 7 - Dashboard Power BI
-### ⏳ Fase 8 - Informe final y defensa
+### ✅ Fase 5 - Machine Learning (completada)
+- PCA aplicado para reducción de dimensionalidad (55% varianza con 2 componentes)
+- K-Means k=4: identificación de 4 perfiles de empresas
+- Cluster 2 identificado como perfil ganador: margen 37%, crecimiento 94%, deuda moderada
+- Regresión lineal: R²=0,11, MAE=7,25pp. Margen neto es el principal driver del ROE (coef. 0,42)
+- Score ponderado: ROE (30%) + Margen (30%) + Deuda (25%) + Crecimiento (15%)
+
+### ✅ Fase 6 - Construcción de cartera en Excel (completada)
+- Cartera final de 20 empresas seleccionadas (5 por sector)
+- Distribución de 50.000 € proporcional al score de cada empresa
+- KPIs agregados: ROE ponderado 27,49% | Margen 37,34% | Deuda 25,64%
+
+### ✅ Fase 7 - Dashboard Power BI (completada)
+- Dashboard Visión General: tabla de 20 empresas + distribución por sector
+- Dashboard Perfil Financiero: ROE por empresa + dispersión Margen vs Deuda
+
+### ✅ Fase 8 - Informe final y defensa (completada)
+- Informe final en PDF (10 secciones según plantilla del profesor)
+- Presentación PowerPoint (10 diapositivas)
+- Visualizaciones exportadas a carpeta `visualizaciones/`
 
 ## Autor
 Jesús Cuenca - Bootcamp Data Analytics
