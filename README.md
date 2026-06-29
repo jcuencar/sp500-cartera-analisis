@@ -79,7 +79,7 @@ Ambos datasets proceden de Kaggle:
 8. Informe final y defensa del proyecto
 
 ## Estado actual
-Proyecto prácticamente terminado. Pendiente: dashboards Power BI e informe final. Entrega prevista: 29 de junio de 2026.
+Proyecto prácticamente terminado. Pendiente: informe final y presentación. Entrega prevista: 29 de junio de 2026.
 
 ## Progreso del proyecto
 
@@ -104,7 +104,6 @@ Universo final de análisis: **1.124 empresas** distribuidas entre Technology, H
 ### ✅ Fase 4 - Análisis exploratorio (EDA)
 ### ✅ Fase 5 - Machine Learning (PCA + K-Means + Regresión)
 ### ✅ Fase 6 - Construcción de cartera en Excel
-
 - 242 empresas candidatas filtradas por KPIs en SQL
 - Clusters K-Means asignados a cada empresa
 - Cartera final de 20 empresas seleccionadas (5 por sector)
@@ -112,7 +111,10 @@ Universo final de análisis: **1.124 empresas** distribuidas entre Technology, H
 - Distribución de 50.000€ proporcional al score de cada empresa
 - KPIs agregados: ROE ponderado 27.49% | Margen 37.34% | Deuda 25.64%
 
-### ⏳ Fase 7 - Dashboard Power BI
+### ✅ Fase 7 - Dashboard Power BI
+- Dashboard 1 (Visión General): tabla de 20 empresas + gráfico circular de distribución por sector
+- Dashboard 2 (Perfil Financiero): ROE por empresa + gráfico de dispersión Margen vs Deuda
+
 ### ⏳ Fase 8 - Informe final y defensa
 
 ## Autor
